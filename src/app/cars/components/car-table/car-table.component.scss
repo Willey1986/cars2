@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+tr.evenRow {
+  background-color: #e3f2fd44;
+}
+
+tr:hover {
+  background-color: #e3f2fd;
+}
+
+th {
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+}

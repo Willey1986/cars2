@@ -1,0 +1,28 @@
+.searchbar-container {
+  display: flex;
+  background-color: #1565c0;
+  height: 64px;
+  align-items: center;
+}
+
+ul {
+  flex: 1 1 auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  padding: 0 32px;
+  align-self: center;
+  display: inline-block;
+}
+
+li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+app-search-bar {
+  margin-right: 32px;
+}

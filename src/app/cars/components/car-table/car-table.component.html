@@ -1,0 +1,24 @@
+<table *ngIf="cars$ | async as cars; else loading">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Cylinders</th>
+    <th>Horsepower</th>
+    <th>Year</th>
+    <th>Origin</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr [ngClass]="getClass(i)" *ngFor="let car of (cars$ | async | filter: searchTerm); let i = index;">
+    <td>{{ car.Name }}</td>
+    <td>{{ car.Cylinders }}</td>
+    <td>{{ car.Horsepower }}</td>
+    <td>{{ car.Year }}</td>
+    <td>{{ car.Origin }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #loading>
+  LOADING
+</ng-template>
