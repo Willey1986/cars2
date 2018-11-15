@@ -6,7 +6,12 @@
 }
 
 input {
-  height: 30px;
+  height: 32px;
+  line-height: 32px;
   width: 250px;
   border: none;
+}
+
+input:focus {
+  outline: none;
 }
