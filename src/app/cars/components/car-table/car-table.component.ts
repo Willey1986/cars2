@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-car-table',
@@ -8,11 +8,11 @@ import {Observable} from 'rxjs';
 })
 export class CarTableComponent implements OnInit {
 
-  @Input() public cars$: Observable;
+  @Input() public cars: any[];
 
   @Input() public searchTerm;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,5 +21,10 @@ export class CarTableComponent implements OnInit {
     if (i % 2 === 1) {
       return 'evenRow';
     }
+  }
+
+  onRowClicked(rowNumber) {
+    console.log(rowNumber);
+    this.router.navigate(['cars', rowNumber]);
   }
 }

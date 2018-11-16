@@ -11,7 +11,7 @@ import {debounce, debounceTime} from 'rxjs/operators';
 })
 export class CarsComponent implements OnInit, OnDestroy {
 
-  private cars = this.carService.getAllCars();
+  private cars$ = this.carService.getCars();
   private searchTerm = '';
   private subs: Subscription[] = [];
 

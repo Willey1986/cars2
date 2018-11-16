@@ -1,4 +1,4 @@
-<table *ngIf="cars$ | async as cars; else loading">
+<table *ngIf="cars; else loading">
   <thead>
   <tr>
     <th>Name</th>
@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr [ngClass]="getClass(i)" *ngFor="let car of (cars$ | async | filter: searchTerm); let i = index;">
+  <tr [ngClass]="getClass(i)" (click)="onRowClicked(i)" *ngFor="let car of (cars | filter: searchTerm); let i = index;">
     <td>{{ car.Name }}</td>
     <td>{{ car.Cylinders }}</td>
     <td>{{ car.Horsepower }}</td>

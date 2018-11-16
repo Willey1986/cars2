@@ -32,3 +32,9 @@ li a {
 app-search-bar {
   margin-right: 32px;
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 1em;
+  }
+}

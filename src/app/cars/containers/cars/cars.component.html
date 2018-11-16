@@ -1,1 +1,1 @@
-<app-car-table [cars$]="cars" [searchTerm]="searchTerm"></app-car-table>
+<app-car-table [cars]="cars$ | async" [searchTerm]="searchTerm"></app-car-table>

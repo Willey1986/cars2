@@ -1,14 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CarsComponent } from './cars.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {CarService} from '../../services/car.service';
 
-describe('CarsComponent', () => {
+class MockCarService {
+  getCars() {}
+}
+
+fdescribe('CarsComponent', () => {
   let component: CarsComponent;
   let fixture: ComponentFixture<CarsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarsComponent ]
+      declarations: [ CarsComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        {provide: CarService, useClass: MockCarService}
+      ]
     })
     .compileComponents();
   }));
