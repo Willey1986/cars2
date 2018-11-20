@@ -7,11 +7,14 @@ import {CarTableComponent} from './components/car-table/car-table.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
+import {AgGridModule} from 'ag-grid-angular';
+
 @NgModule({
   declarations: [CarsComponent, CarTableComponent, FilterPipe, CarDetailComponent],
   imports: [
     CommonModule,
-    CarsRoutingModule
+    CarsRoutingModule,
+    AgGridModule.withComponents([])
   ]
 })
 export class CarsModule { }

@@ -8,23 +8,31 @@ import {Router} from '@angular/router';
 })
 export class CarTableComponent implements OnInit {
 
+  gridApi;
+
+  columnDefs = [
+    {headerName: 'Name', field: 'Name', rowDrag: true},
+    {headerName: 'Cylinders', field: 'Cylinders'},
+    {headerName: 'Horsepower', field: 'Horsepower'},
+    {headerName: 'Year', field: 'Year'},
+    {headerName: 'Origin', field: 'Origin'},
+  ];
+
   @Input() public cars: any[];
 
   @Input() public searchTerm;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
-  getClass(i) {
-    if (i % 2 === 1) {
-      return 'evenRow';
-    }
+  onGridReady(params) {
+    this.gridApi = params.api;
   }
-
-  onRowClicked(rowNumber) {
-    console.log(rowNumber);
-    this.router.navigate(['cars', rowNumber]);
+  
+  onCsvExportClicked() {
+    this.gridApi.exportDataAsCsv();
   }
 }
